@@ -1,0 +1,11 @@
+:docinfo: private
+:source-highlighter: highlight.js
+:highlightjs-theme: a11y-light.css
+:autofit-option:
+:icons: font
+:revealjs_theme: white
+:revealjs_history: true
+:customcss: custom.css
+:revealjs_width: 1280
+
+include::slides/introduction.adoc[]
