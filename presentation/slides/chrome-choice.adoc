@@ -1,0 +1,7 @@
+== Pourquoi Chrome ?
+
+=== !
+
+Pourcentage des navigateurs utilisés en 2024
+
+image::../images/chrome-choice.png[]

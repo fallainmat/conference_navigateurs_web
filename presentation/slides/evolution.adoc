@@ -1,0 +1,75 @@
+== Les navigateurs web
+
+=== !
+
+[.notes]
+--
+Le premier navigateur ne marchait que sur une machine Next et il sera rapidement renommé Nexus
+--
+
+[.frise]
+--
+
+[.frise-background]
+image::../images/frise-chrono.png[]
+--
+
+// ng1
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-1]
+1990
+
+[.frise-item.frise-bottom.frise-item-1]
+image::../images/www.png[]
+[.frise-text.frise-bottom.frise-item-1]
+World Wide Web
+--
+
+// ng2
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-bottom.frise-item-2]
+1995
+
+[.frise-item.frise-top.frise-item-2]
+image::./images/nestscape.png[]
+[.frise-item.frise-top-1.frise-item-2]
+image::../images/explorer.png[]
+--
+
+// mat
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-3]
+2000
+
+[.frise-item.frise-bottom.frise-item-3]
+image::../images/war.png[]
+[.frise-text.frise-bottom.frise-item-3]
+Guerre des navigateurs
+--
+
+// rxjs6
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-bottom.frise-item-4]
+2005
+
+[.frise-item.frise-top.frise-item-4]
+image::../images/mozilla.png[]
+[.frise-text.frise-bottom.frise-item-4]
+Mozilla Firefox
+--
+
+// ivy
+[.frise-step.fade-right%step]
+--
+[.frise-date.frise-top.frise-item-5]
+2008
+
+[.frise-item.frise-bottom.frise-item-5]
+image::../images/chrome.png[]
+[.frise-text.frise-bottom.frise-item-5]
+Google Chrome
+--

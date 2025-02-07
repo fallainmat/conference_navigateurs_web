@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+    </style>
+</head>
+<body class="bg-stone-950 mt-30">
+<div class="grid justify-end">
+    <button id="frame-id" class="font-bold p-2 bg-sky-700 text-stone-100 max-w-sm rounded-md mt-8 mr-10 cursor-pointer">
+        Frame
+        Javascript
+    </button>
+</div>
+<div class="grid">
+    <div class="mt-8 px-48">
+        <div class="flex flex-row">
+            <div id="script-id" class="relative bg-sky-900 rounded-md w-lg h-140 p-8 text-stone-100 font-bold">
+                <div class="absolute w-24 h-12 bg-sky-600 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-50">
+                    Script
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-row">
+                    <div id="callstack-id"
+                         class="relative ml-10 bg-red-900 rounded-md w-xl h-80 text-stone-100 font-bold p-8 flex justify-end items-center"
+                         style="flex-direction: column">
+                        <div class="absolute w-24 h-12 bg-red-600 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-60">
+                            Call Stack
+                        </div>
+                    </div>
+                    <div class="relative ml-10 bg-emerald-600 rounded-md w-64 h-80 flex justify-center items-center">
+                        <div class="absolute w-24 h-12 bg-emerald-300 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-22">
+                            Event loop
+                        </div>
+                        <div class="w-24 h-24 border-5 border-stone-100 border-b-transparent rounded-full animate-spin"></div>
+                    </div>
+                </div>
+                <div class="ml-10 flex flex-row justify-between">
+                    <div id="console-id"
+                         class="relative mt-8 bg-green-900 rounded-md w-64 h-80 text-stone-100 font-bold p-8">
+                        <div class="absolute w-24 h-12 bg-green-300 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-20">
+                            Console
+                        </div>
+                    </div>
+                    <div id="web-id"
+                         class="relative mt-8 ml-16 bg-blue-900 rounded-md w-64 h-80 text-stone-100 font-bold py-8 p-4">
+                        <div class="absolute w-24 h-12 bg-blue-300 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-20">
+                            Web API
+                        </div>
+                    </div>
+                    <div class="grid ml-10">
+                        <div id="task-id"
+                             class="relative mt-8 bg-purple-600 rounded-md w-sm h-30 text-stone-100 font-bold p-8">
+                            <div class="absolute w-24 h-12 bg-purple-300 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-35">
+                                Task Queue
+                            </div>
+                        </div>
+                        <div id="micro-id"
+                             class="relative mt-18 bg-fuchsia-600 rounded-md w-sm h-30 text-stone-100 font-bold p-8">
+                            <div class="absolute w-40 h-12 bg-fuchsia-300 rounded-md flex justify-center items-center text-stone-100 font-bold -top-5 left-28">
+                                Micro Trask Queue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!--<script>-->
+<!--    const script = document.getElementById('script-id');-->
+<!--    const callStack = document.getElementById('callstack-id');-->
+<!--    const console = document.getElementById('console-id');-->
+
+<!--    const script1 = document.createElement("div");-->
+<!--    script1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>console.log(\'test-1\')</p></div>';-->
+
+<!--    const log1 = document.createElement("div");-->
+<!--    log1.innerHTML = '<p>test-1</p>';-->
+
+<!--    const script2 = document.createElement("div");-->
+<!--    script2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p></p>console.log(\'test-2\')</p></div>';-->
+
+<!--    const log2 = document.createElement("div");-->
+<!--    log2.innerHTML = '<p>test-2</p>';-->
+
+<!--    const script3 = document.createElement("div");-->
+<!--    script3.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>function test1() {</p>' +-->
+<!--        '<p class="ml-5">console.log(\'test-3\')</p>' +-->
+<!--        '<p>}</p>'+-->
+<!--        '</div>'-->
+
+<!--    const log3 = document.createElement("div");-->
+<!--    log3.innerHTML = '<p>test-3</p>';-->
+
+<!--    const script4 = document.createElement("div");-->
+<!--    script4.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>function test() {</p>' +-->
+<!--        '<p class="ml-5">test1()</p>' +-->
+<!--        '<p class="ml-5">console.log(\'test-5\')</p>' +-->
+<!--        '<p>}</p>' +-->
+<!--        '</div>'-->
+
+<!--    const script5 = document.createElement("div");-->
+<!--    script5.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2">test()</div>';-->
+
+<!--    const log5 = document.createElement("div");-->
+<!--    log5.innerText = 'test-5';-->
+
+<!--    const script6 = document.createElement("div");-->
+<!--    script6.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2">console.log(\'test-4\')</div>';-->
+
+<!--    const log4 = document.createElement("div");-->
+<!--    log4.innerText = 'test-4';-->
+
+<!--    const button = document.getElementById('frame-id');-->
+
+<!--    button.addEventListener('keydown', (e) => {-->
+<!--        switch (e.key) {-->
+<!--            case '&':-->
+<!--                script.appendChild(script1);-->
+<!--                script.appendChild(script2);-->
+<!--                script.appendChild(script3);-->
+<!--                script.appendChild(script4);-->
+<!--                script.appendChild(script5);-->
+<!--                script.appendChild(script6);-->
+<!--                break;-->
+<!--            case 'é':-->
+<!--                callStack.appendChild(script1);-->
+<!--                break-->
+<!--            case '"':-->
+<!--                callStack.removeChild(script1);-->
+<!--                console.appendChild(log1);-->
+<!--                break-->
+<!--            case '\'':-->
+<!--                callStack.appendChild(script2);-->
+<!--                break-->
+<!--            case '(':-->
+<!--                callStack.removeChild(script2);-->
+<!--                console.appendChild(log2);-->
+<!--                break-->
+<!--            case '-':-->
+<!--                callStack.appendChild(script5);-->
+<!--                break-->
+<!--            case 'è':-->
+<!--                callStack.prepend(script4);-->
+<!--                break-->
+<!--            case '_':-->
+<!--                callStack.prepend(script3);-->
+<!--                break-->
+<!--            case 'ç':-->
+<!--                callStack.removeChild(script3);-->
+<!--                console.appendChild(log3);-->
+<!--                break-->
+<!--            case 'à':-->
+<!--                callStack.removeChild(script4);-->
+<!--                console.appendChild(log5);-->
+<!--                break-->
+<!--            case ')':-->
+<!--                callStack.removeChild(script5);-->
+<!--                break-->
+<!--            case '=':-->
+<!--                callStack.appendChild(script6);-->
+<!--                break-->
+<!--            case 'a':-->
+<!--                callStack.removeChild(script6);-->
+<!--                console.appendChild(log4);-->
+<!--                break-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
+<!--<script>-->
+<!--    const script = document.getElementById('script-id');-->
+<!--    const callStack = document.getElementById('callstack-id');-->
+<!--    const web = document.getElementById('web-id');-->
+<!--    const task = document.getElementById('task-id');-->
+<!--    const console = document.getElementById('console-id');-->
+
+<!--    const script1 = document.createElement("div");-->
+<!--    script1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>setTimeout(() => {</p>' +-->
+<!--        '<p class="ml-5">console.log(\'2000ms\')</p>' +-->
+<!--        '<p>}, 2000)</p>' +-->
+<!--        '</div>'-->
+
+<!--    const task1 = document.createElement("div");-->
+<!--    task1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg"><p>() => console.log(2000ms)</p></div>';-->
+
+<!--    const log2 = document.createElement("div");-->
+<!--    log2.innerHTML = '<p>2000ms</p>';-->
+
+<!--    const script2 = document.createElement("div");-->
+<!--    script2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>setTimeout(() => {</p>' +-->
+<!--        '<p class="ml-5">console.log(\'100ms\')</p>' +-->
+<!--        '<p>}, 100)</p>' +-->
+<!--        '</div>'-->
+
+<!--    const task2 = document.createElement("div");-->
+<!--    task2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg"><p>() => console.log(100ms)</p></div>';-->
+
+<!--    const log3 = document.createElement("div");-->
+<!--    log3.innerHTML = '<p>100ms</p>';-->
+
+<!--    const script3 = document.createElement("div");-->
+<!--    script3.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>console.log(\'test\')</p></div>';-->
+
+<!--    const log1 = document.createElement("div");-->
+<!--    log1.innerHTML = '<p>test</p>';-->
+
+<!--    const button = document.getElementById('frame-id');-->
+
+<!--    button.addEventListener('keydown', (e) => {-->
+<!--        switch (e.key) {-->
+<!--            case '&':-->
+<!--                script.appendChild(script1);-->
+<!--                script.appendChild(script2);-->
+<!--                script.appendChild(script3);-->
+<!--                break-->
+<!--            case 'é':-->
+<!--                callStack.appendChild(script1);-->
+<!--                break-->
+<!--            case '"':-->
+<!--                web.appendChild(script1);-->
+<!--                break-->
+<!--            case '\'':-->
+<!--                callStack.appendChild(script2);-->
+<!--                break-->
+<!--            case '(':-->
+<!--                web.appendChild(script2);-->
+<!--                break-->
+<!--            case '-':-->
+<!--                callStack.appendChild(script3);-->
+<!--                break-->
+<!--            case 'è':-->
+<!--                callStack.removeChild(script3);-->
+<!--                console.appendChild(log1);-->
+<!--                break-->
+<!--            case '_':-->
+<!--                web.removeChild(script2);-->
+<!--                task.appendChild(task2);-->
+<!--                break-->
+<!--            case 'ç':-->
+<!--                callStack.appendChild(task2)-->
+<!--                break-->
+<!--            case 'à':-->
+<!--                callStack.removeChild(task2);-->
+<!--                console.appendChild(log3);-->
+<!--                break-->
+<!--            case ')':-->
+<!--                web.removeChild(script1);-->
+<!--                task.appendChild(task1);-->
+<!--                break-->
+<!--            case '=':-->
+<!--                callStack.appendChild(task1)-->
+<!--                break-->
+<!--            case 'a':-->
+<!--                callStack.removeChild(task1);-->
+<!--                console.appendChild(log2)-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+<!--<script>-->
+<!--    const script = document.getElementById('script-id');-->
+<!--    const callStack = document.getElementById('callstack-id');-->
+<!--    const web = document.getElementById('web-id');-->
+<!--    const task = document.getElementById('task-id');-->
+<!--    const microTask = document.getElementById('micro-id');-->
+<!--    const console = document.getElementById('console-id');-->
+
+<!--    const script1 = document.createElement("div");-->
+<!--    script1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>setInterval(() => {</p>' +-->
+<!--        '<p class="ml-5">console.log(\'100ms\')</p>' +-->
+<!--        '<p>}, 100)</p>' +-->
+<!--        '</div>'-->
+
+<!--    const task1 = document.createElement("div");-->
+<!--    task1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg"><p>() => console.log(100ms)</p></div>';-->
+
+<!--    const task1_1 = document.createElement("div");-->
+<!--    task1_1.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg"><p>() => console.log(100ms)</p></div>';-->
+
+<!--    const task1_2 = document.createElement("div");-->
+<!--    task1_2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>() => console.log(100ms)</p></div>';-->
+
+<!--    const log1 = document.createElement("div");-->
+<!--    log1.innerHTML = '<p>100ms</p>';-->
+
+<!--    const log1_1 = document.createElement("div");-->
+<!--    log1_1.innerHTML = '<p>100ms</p>';-->
+
+<!--    const log1_2 = document.createElement("div");-->
+<!--    log1_2.innerHTML = '<p>100ms</p>';-->
+
+<!--    const script2 = document.createElement("div");-->
+<!--    script2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2"><p>fetch(\'www.google.com\') {</p>' +-->
+<!--        '<p class="ml-5">.then(res => console.log(\'fetch réussi\')</p>' +-->
+<!--        '<p>}, 2000)</p>'+-->
+<!--        '</div>'-->
+
+<!--    const task2 = document.createElement("div");-->
+<!--    task2.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg"><p>() => console.log(\'fetch réussi\')</p></div>';-->
+
+<!--    const log2 = document.createElement("div");-->
+<!--    log2.innerHTML = '<p>fetch réussi</p>';-->
+
+<!--    const script3 = document.createElement("div");-->
+<!--    script3.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2">document.createElement(\'div\')</div>';-->
+
+<!--    const script4 = document.createElement("div");-->
+<!--    script4.innerHTML = '<div class="bg-slate-400 p-2 rounded-lg mt-2">console.log(\'test-1\')</div>';-->
+
+<!--    const log3 = document.createElement("div");-->
+<!--    log3.innerText = 'test-1';-->
+
+<!--    const button = document.getElementById('frame-id');-->
+
+<!--    button.addEventListener('keydown', (e) => {-->
+<!--        switch (e.key) {-->
+<!--            case '&':-->
+<!--                script.appendChild(script1);-->
+<!--                script.appendChild(script2);-->
+<!--                script.appendChild(script3);-->
+<!--                script.appendChild(script4);-->
+<!--                break-->
+<!--            case 'é':-->
+<!--                callStack.appendChild(script1);-->
+<!--                break-->
+<!--            case '"':-->
+<!--                web.appendChild(script1);-->
+<!--                break-->
+<!--            case '\'':-->
+<!--                callStack.appendChild(script2);-->
+<!--                break-->
+<!--            case '(':-->
+<!--                web.appendChild(script2);-->
+<!--                break-->
+<!--            case '-':-->
+<!--                callStack.appendChild(script3);-->
+<!--                break-->
+<!--            case 'è':-->
+<!--                web.appendChild(script3);-->
+<!--                break-->
+<!--            case '_':-->
+<!--                callStack.appendChild(script4);-->
+<!--                break-->
+<!--            case 'ç':-->
+<!--                callStack.removeChild(script4)-->
+<!--                console.appendChild(log3);-->
+<!--                break-->
+<!--            case 'à':-->
+<!--                web.removeChild(script3)-->
+<!--                break-->
+<!--            case ')':-->
+<!--                task.appendChild(task1);-->
+<!--                break-->
+<!--            case '=':-->
+<!--                callStack.appendChild(task1);-->
+<!--                break-->
+<!--            case 'a':-->
+<!--                callStack.removeChild(task1);-->
+<!--                console.appendChild(log1);-->
+<!--                break-->
+<!--            case 'z':-->
+<!--                task.appendChild(task1_1);-->
+<!--                task.appendChild(task1_2);-->
+<!--                web.removeChild(script2)-->
+<!--                microTask.appendChild(task2);-->
+<!--                break-->
+<!--            case'e':-->
+<!--                callStack.appendChild(task2);-->
+<!--                break-->
+<!--            case 'r':-->
+<!--                callStack.removeChild(task2);-->
+<!--                console.appendChild(log2);-->
+<!--                break-->
+<!--            case 't':-->
+<!--                callStack.appendChild(task1_1);-->
+<!--                break-->
+<!--            case 'y':-->
+<!--                callStack.removeChild(task1_1);-->
+<!--                console.appendChild(log1_1);-->
+<!--                break-->
+<!--            case 'u':-->
+<!--                callStack.appendChild(task1_2);-->
+<!--                break-->
+<!--            case 'i':-->
+<!--                callStack.removeChild(task1_2);-->
+<!--                task.appendChild(task1)-->
+<!--                console.appendChild(log1_2);-->
+<!--                break-->
+<!--            case 'o':-->
+<!--                callStack.appendChild(task1)-->
+<!--                break-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+</html>

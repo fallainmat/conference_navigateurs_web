@@ -3,9 +3,17 @@
 :highlightjs-theme: a11y-light.css
 :autofit-option:
 :icons: font
-:revealjs_theme: white
+:revealjs_theme: night
 :revealjs_history: true
 :customcss: custom.css
 :revealjs_width: 1280
 
 include::slides/introduction.adoc[]
+include::slides/presentation.adoc[]
+include::slides/evolution.adoc[]
+include::slides/chrome-choice.adoc[]
+include::slides/hardware.adoc[]
+include::slides/navigateur-1.adoc[]
+include::slides/browser-process.adoc[]
+include::slides/renderer-process.adoc[]
+include::slides/moteur-js.adoc[]

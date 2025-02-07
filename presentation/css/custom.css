@@ -1,0 +1,150 @@
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    font-family: "Droid Serif";
+}
+
+/* whoami */
+
+.whoami {
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whoami img {
+    border-radius: 25%;
+    width: 300px;
+}
+
+.whoami .openblock {
+    display: flex;
+    flex-direction: column;
+}
+
+.whoami .block > .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.whoami .block > .content .ulist ul {
+    list-style: none;
+}
+
+/* Frise */
+
+.frise {
+    position: relative;
+    margin-top: 10%;
+}
+
+.frise-step {
+    position: relative;
+    margin-top: -10%;
+}
+
+.frise .frise-background img {
+    width: 150%;
+}
+
+.frise-item {
+    position: absolute;
+}
+
+.frise-item img {
+    width: 50px;
+}
+
+.frise-top {
+    top: -35px;
+}
+
+.frise-top-1 {
+    top: -85px;
+}
+
+.frise-bottom {
+    top: 65px;
+}
+
+.frise-date,
+.frise-text {
+    position: absolute;
+    font-size: 0.6em;
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+    text-align: center;
+    max-width: 100px;
+}
+
+.frise-text {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+.frise-text.frise-bottom {
+    margin-top: 80px;
+    margin-left: -60px;
+    width: 180px;
+    max-width: 180px;
+}
+
+.frise-date p {
+    line-height: 2.0em;
+}
+
+.frise-item-1 {
+    left: 38px;
+}
+
+.frise-item-2 {
+    left: 288px;
+}
+
+.frise-item-3 {
+    left: 538px;
+}
+
+.frise-item-4 {
+    left: 788px;
+}
+
+.frise-item-5 {
+    left: 1038px;
+}
+
+/* browser process */
+.browser-process {
+    position: absolute;
+}
+
+.browser-process-left {
+    left: 350px
+}
+
+.browser-process-center {
+    left: 550px
+}
+
+.browser-process-right {
+    left: 750px
+}
+
+.browser-process-up {
+    bottom: 50px;
+    left: 550px
+}
+
+.browser-process-down {
+    top: 150px;
+    left: 550px
+}

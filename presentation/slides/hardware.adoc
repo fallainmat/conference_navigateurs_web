@@ -1,0 +1,25 @@
+== Rappel Hardware
+
+=== !
+
+[.notes]
+--
+
+--
+image::../images/cpu.png[]
+
+=== !
+
+image::../images/gpu.png[]
+
+=== !
+
+image::../images/hardware.png[]
+
+=== !
+
+image::../images/processus.png[]
+
+=== !
+
+image::../images/espace-memoire.svg[]

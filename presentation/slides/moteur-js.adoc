@@ -1,0 +1,26 @@
+== Javacript time... (RUN)
+
+[.notes]
+--
+fetch, setTimout, URL, localStorage, HTMLDivElement, document,XMLHttpRequest
+--
+
+=== API web
+
+=== !
+
+==== DOM
+
+=== !
+
+==== SeTimeout
+
+=== !
+
+==== Fetch
+
+=== Démo Time
+
+
+
+

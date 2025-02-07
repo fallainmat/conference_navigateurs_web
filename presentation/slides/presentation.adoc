@@ -1,0 +1,16 @@
+== !
+
+[.whoami]
+****
+
+[.block]
+--
+image::../images/florian_allainmat.jpg[]
+
+- Florian Allainmat
+- https://github.com/fallainmat
+- Dev / LeadTech
+--
+****
+
+=== Onepoint
